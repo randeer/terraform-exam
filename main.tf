@@ -13,7 +13,7 @@ resource "tls_private_key" "private-key2" {
 
 resource "local_file" "dilshani" {
   filename = "dilshani.txt"
-  content = "Dilshani Lakshika Dias"
+  content = "Dilshani Dias"
 }
 
 variable "girl_name" {
