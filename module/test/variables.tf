@@ -5,5 +5,5 @@ variable "file_name" {
 
 variable "data" {
   type    = string
-  default = "Rashmika Manawadu"
+  default = "The default data values"
 }
