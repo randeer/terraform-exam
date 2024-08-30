@@ -31,5 +31,5 @@ module "using_notest" {
 
 output "test_branch" {
   description = "This chages are initiated on test branch"
-  value = "This is on test branch gain to doc"
+  value = "This is on test branch gain to document final"
 }
