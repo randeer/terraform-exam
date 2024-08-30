@@ -29,3 +29,7 @@ module "using_notest" {
   count  = 1
 }
 
+output "test_branch" {
+  description = "This chages are initiated on test branch"
+  value = "This is on test branch"
+}
