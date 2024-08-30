@@ -1,41 +1,23 @@
-resource "tls_private_key" "private-key" {
-  algorithm = "RSA"
+resource "local_file" "test-file" {
+  content  = "This is my file"
+  filename = "rashmi.txt"
 }
 
-resource "local_file" "rashmika" {
-  filename = "rashmika.txt"
-  content = tls_private_key.private-key.private_key_pem
+module "our_file" {
+  source    = "./module/test"
+  file_name = var.file_name_from_shell
+  data = var.file_date_from_shell
 }
 
-resource "tls_private_key" "private-key2" {
-  algorithm = "RSA"
+
+output "module_data_1" {
+  value = module.our_file.result
 }
 
-resource "local_file" "dilshani" {
-  filename = "dilshani.txt"
-  content = "Dilshani Dias"
+output "module_data_2" {
+  value = module.our_file.file_name
 }
 
-variable "girl_name" {
-  default = "Dilshani Dias"
-  type = string
-}
-
-variable "email_id" {
-  description = "This is user's sensitive data"
-  sensitive = true
-}
-
-variable "my_company" {
-  default = "Halexo"
-  type = string
-}
-
-output "my_girl" {
-  value = "My crush is ${var.girl_name} and my company is ${var.my_company}"
-}
-
-output "email_ID" {
-  value = var.email_id
-  sensitive = true
+output "module_data_3" {
+  value = module.our_file.file_data
 }
