@@ -26,5 +26,6 @@ output "module_data_3" {
 #This is how I can use module that does not have any variables
 module "using_notest" {
   source = "./module/no-test"
-  count  = 0
+  count  = 1
 }
+
