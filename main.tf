@@ -6,7 +6,7 @@ resource "local_file" "test-file" {
 module "our_file" {
   source    = "./module/test"
   file_name = var.file_name_from_shell
-  data = var.file_date_from_shell
+  data      = var.file_date_from_shell
 }
 
 
@@ -20,4 +20,11 @@ output "module_data_2" {
 
 output "module_data_3" {
   value = module.our_file.file_data
+}
+
+
+#This is how I can use module that does not have any variables
+module "using_notest" {
+  source = "./module/no-test"
+  count  = 0
 }

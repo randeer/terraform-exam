@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"our_file","Source":"./module/test","Dir":"module/test"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"our_file","Source":"./module/test","Dir":"module/test"},{"Key":"using_notest","Source":"./module/no-test","Dir":"module/no-test"}]}
