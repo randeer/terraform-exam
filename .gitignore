@@ -4,7 +4,11 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
-
+uptime.tfstate.backup
+uptime.tfstate
+terraform.tfstate.backup
+terraform.tfstate
+.terraform.lock.hcl
 # Crash log files
 crash.log
 
