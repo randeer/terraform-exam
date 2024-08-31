@@ -36,7 +36,7 @@ output "test_branch" {
 
 module "creator" {
   source  = "app.terraform.io/rashmika/creator/file"
-  version = "1.0.0"
+  version = "1.1.1"
   data = var.file_date_from_shell
 }
 
