@@ -33,3 +33,24 @@ output "test_branch" {
   description = "This chages are initiated on test branch"
   value = "This is on test branch gain to document final"
 }
+
+module "creator" {
+  source  = "app.terraform.io/rashmika/creator/file"
+  version = "3.0.0"
+  data = var.file_date_from_shell
+}
+
+output "private_registry_module" {
+  description = "This chages are initiated on private_registry_module"
+  value = "This is the file creates from private_registry_module, its name is :${module.creator.file_name}"
+}
+
+
+module "local_var_test" {
+  source = "./module/local-test"
+}
+
+output "value_from_local_module" {
+  description = "This is the value is taken from local variable module"
+  value = "His full name is: ${module.local_var_test.myname} and his ID is: ${module.local_var_test.myid}"
+}
